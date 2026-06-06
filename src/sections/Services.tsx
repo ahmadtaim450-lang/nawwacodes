@@ -33,17 +33,14 @@ function ServiceCard({
   item: { title: string; description: string; benefit: string; icon: any; tags: string[] }
   index: number
 }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, margin: '-80px' })
   const [flipped, setFlipped] = useState(false)
 
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, rotateX: 80, y: 60 }}
-      animate={isInView ? { opacity: 1, rotateX: 0, y: 0 } : {}}
-      transition={{ delay: index * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      style={{ perspective: "1200px" }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.05, duration: 0.4 }}
       onClick={() => setFlipped(!flipped)}
       className="cursor-pointer"
     >
