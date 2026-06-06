@@ -19,14 +19,14 @@ function CardPattern({ mouseX, mouseY, randomString, isActive }: any) {
 
   return (
     <div className="pointer-events-none">
-      <div className="absolute inset-0 rounded-2xl [mask-image:linear-gradient(white,transparent)] opacity-30 group-hover/card:opacity-50" />
+      <div className="absolute inset-0 rounded-2xl [mask-image:linear-gradient(white,transparent)] opacity-15 group-hover/card:opacity-30" />
       <motion.div
         className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-500 to-blue-700 backdrop-blur-xl transition duration-500"
-        style={{ ...style, opacity: isActive ? 1 : 0.35 }}
+        style={{ ...style, opacity: isActive ? 0.6 : 0.15 }}
       />
       <motion.div
         className="absolute inset-0 rounded-2xl mix-blend-overlay"
-        style={{ ...style, opacity: isActive ? 1 : 0.25 }}
+        style={{ ...style, opacity: isActive ? 0.5 : 0.1 }}
       >
         <p className="absolute inset-x-0 text-xs h-full break-words whitespace-pre-wrap text-white font-mono font-bold transition duration-500">
           {randomString}
