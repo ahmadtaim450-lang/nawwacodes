@@ -79,6 +79,11 @@ export const translations = {
       privacy: "Privacy Policy",
       terms: "Terms of Service",
     },
+    locations: {
+      badge: "Global Reach",
+      title: "WHERE WE ARE LOCATED",
+      description: "Rooted in the Middle East, serving clients across the globe — from London to Tokyo. Our distributed team works with businesses worldwide, delivering digital solutions without borders.",
+    },
     servicesItems: [
       { title: "Custom Web Development", description: "Building modern, scalable, and high-performance websites tailored to business needs." },
       { title: "Web Application Development", description: "Developing secure and powerful web applications with seamless user experiences." },
@@ -174,6 +179,11 @@ export const translations = {
       rights: "جميع الحقوق محفوظة.",
       privacy: "سياسة الخصوصية",
       terms: "شروط الخدمة",
+    },
+    locations: {
+      badge: "انتشار عالمي",
+      title: "أين نتواجد",
+      description: "جذورنا في الشرق الأوسط، نخدم عملاء حول العالم — من لندن إلى طوكيو. فريقنا الموزع يعمل مع الشركات عالمياً، نقدم حلولاً رقمية بلا حدود.",
     },
     servicesItems: [
       { title: "تطوير الويب المخصص", description: "بناء مواقع إلكترونية حديثة، قابلة للتوسع، وعالية الأداء، مصممة خصيصًا لتلبية احتياجات الأعمال." },

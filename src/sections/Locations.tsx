@@ -3,6 +3,8 @@
 import { useRef, useState, useEffect, Suspense, lazy } from "react"
 import { motion, useInView } from "framer-motion"
 import { Globe } from "lucide-react"
+import { useI18n } from "@/lib/i18n"
+import { StarsBackground } from "@/components/ui/stars"
 
 const MapAsync = lazy(() =>
   import("@/components/ui/mapcn-map-arc").then((m) => ({ default: m.Map }))
@@ -42,6 +44,7 @@ const arcs = destinations.map((dest) => ({
 }))
 
 export function Locations() {
+  const { t } = useI18n()
   const ref = useRef<HTMLElement>(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [shouldLoad, setShouldLoad] = useState(false)
@@ -52,7 +55,8 @@ export function Locations() {
 
   return (
     <section id="locations" ref={ref} className="relative py-20 md:py-32 bg-black overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <StarsBackground className="absolute inset-0 opacity-30" starColor="#fff" speed={80} factor={0.02} />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left - Text */}
           <motion.div
@@ -63,18 +67,16 @@ export function Locations() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02]">
               <Globe className="w-4 h-4 text-neutral-400" />
-              <span className="text-sm text-neutral-400">Global Reach</span>
+              <span className="text-sm text-neutral-400">{t.locations.badge}</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
-                WHERE WE ARE LOCATED
+                {t.locations.title}
               </span>
             </h2>
             <p className="text-neutral-400 text-base md:text-lg leading-relaxed max-w-md">
-              Rooted in the Middle East, serving clients across the globe — from
-              London to Tokyo. Our distributed team works with businesses worldwide,
-              delivering digital solutions without borders.
+              {t.locations.description}
             </p>
 
             <div className="flex flex-wrap gap-2">
