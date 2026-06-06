@@ -53,71 +53,76 @@ export function Locations() {
   return (
     <section id="locations" ref={ref} className="relative py-20 md:py-32 bg-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12 space-y-4"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02]">
-            <Globe className="w-4 h-4 text-neutral-400" />
-            <span className="text-sm text-neutral-400">Global Reach</span>
-          </div>
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          {/* Left - Text */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7 }}
+            className="space-y-6"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/[0.06] bg-white/[0.02]">
+              <Globe className="w-4 h-4 text-neutral-400" />
+              <span className="text-sm text-neutral-400">Global Reach</span>
+            </div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-            <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
-              WHERE WE ARE LOCATED
-            </span>
-          </h2>
-          <p className="text-neutral-500 max-w-2xl mx-auto text-base md:text-lg">
-            Rooted in the Middle East, serving clients across the globe — from
-            London to Tokyo.
-          </p>
-        </motion.div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+              <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
+                WHERE WE ARE LOCATED
+              </span>
+            </h2>
+            <p className="text-neutral-400 text-base md:text-lg leading-relaxed max-w-md">
+              Rooted in the Middle East, serving clients across the globe — from
+              London to Tokyo. Our distributed team works with businesses worldwide,
+              delivering digital solutions without borders.
+            </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.2, duration: 0.7 }}
-          className="h-[450px] md:h-[550px] rounded-3xl overflow-hidden border border-white/[0.06]"
-        >
-          {shouldLoad ? (
-            <Suspense fallback={<div className="w-full h-full bg-white/[0.02] animate-pulse" />}>
-              <MapAsync center={[hub.lng, hub.lat]} zoom={1.5} projection={{ type: "globe" } as any}>
-                <MapArcAsync
-                  data={arcs}
-                  curvature={0.35}
-                  paint={{ "line-color": "#3b82f6", "line-width": 1.5, "line-opacity": 0.5, "line-dasharray": [2, 2] }}
-                />
-                <MapMarkerAsync longitude={hub.lng} latitude={hub.lat}>
-                  <MarkerContentAsync>
-                    <div className="size-3 rounded-full border-2 border-white bg-blue-500 shadow-md shadow-blue-500/50" />
-                    <MarkerLabelAsync position="top" className="bg-black/80 rounded-sm px-1.5 py-0.5 text-[11px] font-semibold backdrop-blur">
-                      {hub.name}
-                    </MarkerLabelAsync>
-                  </MarkerContentAsync>
-                </MapMarkerAsync>
-                {destinations.map((dest) => (
-                  <MapMarkerAsync key={dest.name} longitude={dest.lng} latitude={dest.lat}>
+            <div className="flex flex-wrap gap-2">
+              {["Middle East", "Europe", "North America", "Asia Pacific", "Australia"].map((region) => (
+                <span key={region} className="px-4 py-1.5 text-xs rounded-full border border-white/[0.08] bg-white/[0.02] text-neutral-400">
+                  {region}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right - Globe */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ delay: 0.2, duration: 0.7 }}
+            className="h-[350px] sm:h-[400px] lg:h-[500px]"
+          >
+            {shouldLoad ? (
+              <Suspense fallback={<div className="w-full h-full bg-white/[0.02] animate-pulse rounded-full" />}>
+                <MapAsync center={[hub.lng, hub.lat]} zoom={1.5} projection={{ type: "globe" } as any}>
+                  <MapArcAsync
+                    data={arcs}
+                    curvature={0.35}
+                    paint={{ "line-color": "#3b82f6", "line-width": 1.5, "line-opacity": 0.5, "line-dasharray": [2, 2] }}
+                  />
+                  <MapMarkerAsync longitude={hub.lng} latitude={hub.lat}>
                     <MarkerContentAsync>
-                      <div className="size-2 rounded-full border-2 border-white bg-emerald-500 shadow shadow-emerald-500/50" />
-                      <MarkerLabelAsync position="top">{dest.name}</MarkerLabelAsync>
+                      <div className="size-3 rounded-full border-2 border-white bg-blue-500 shadow-md shadow-blue-500/50" />
+                      <MarkerLabelAsync position="top" className="bg-black/80 rounded-sm px-1.5 py-0.5 text-[11px] font-semibold backdrop-blur">
+                        {hub.name}
+                      </MarkerLabelAsync>
                     </MarkerContentAsync>
                   </MapMarkerAsync>
-                ))}
-              </MapAsync>
-            </Suspense>
-          ) : (
-            <div className="w-full h-full bg-white/[0.02]" />
-          )}
-        </motion.div>
-
-        <div className="flex flex-wrap justify-center gap-3 mt-8">
-          {["Middle East", "Europe", "North America", "Asia Pacific", "Australia"].map((region) => (
-            <span key={region} className="px-4 py-1.5 text-xs rounded-full border border-white/[0.08] bg-white/[0.02] text-neutral-400">
-              {region}
-            </span>
-          ))}
+                  {destinations.map((dest) => (
+                    <MapMarkerAsync key={dest.name} longitude={dest.lng} latitude={dest.lat}>
+                      <MarkerContentAsync>
+                        <div className="size-2 rounded-full border-2 border-white bg-emerald-500 shadow shadow-emerald-500/50" />
+                        <MarkerLabelAsync position="top">{dest.name}</MarkerLabelAsync>
+                      </MarkerContentAsync>
+                    </MapMarkerAsync>
+                  ))}
+                </MapAsync>
+              </Suspense>
+            ) : (
+              <div className="w-full h-full bg-white/[0.02]" />
+            )}
+          </motion.div>
         </div>
       </div>
     </section>
