@@ -49,7 +49,7 @@ function ServiceCard({
             <item.icon className="w-5 h-5" />
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-2 p-3 rounded-xl bg-black/60 border border-white/10">
             <h3 className="text-lg font-semibold text-white leading-tight">{item.title}</h3>
             <p className="text-sm text-neutral-400 leading-relaxed">{item.description}</p>
           </div>
@@ -58,7 +58,7 @@ function ServiceCard({
             {item.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2.5 py-0.5 text-[11px] rounded-full bg-white/[0.04] border border-white/[0.06] text-neutral-500"
+                className="px-2.5 py-0.5 text-[11px] rounded-full bg-black/60 border border-white/10 text-neutral-400"
               >
                 {tag}
               </span>
