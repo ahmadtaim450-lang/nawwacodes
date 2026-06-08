@@ -1,29 +1,19 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
-  Globe, Smartphone, Palette, Server, TrendingUp,
-  Lightbulb, Megaphone, Share2, ShoppingBag, Webhook,
-  Cloud, Wrench, Search, Bot, Code2, X,
+  Globe, Palette, Server,
+  Search, Bot, Code2, X,
 } from 'lucide-react'
 import { EvervaultCard } from '@/components/ui/evervault-card'
 import { useI18n } from '@/lib/i18n'
 
 const servicesData = [
-  { icon: Globe, tags: ['React', 'Next.js', 'TypeScript'] },
-  { icon: Code2, tags: ['Node.js', 'PostgreSQL', 'REST APIs'] },
-  { icon: Smartphone, tags: ['React Native', 'Flutter', 'iOS', 'Android'] },
+  { icon: Bot, tags: ['Chatbots', 'ML', 'Process Automation', 'AI Agents'] },
+  { icon: Search, tags: ['On-Page SEO', 'Core Web Vitals', 'Speed Optimization'] },
   { icon: Palette, tags: ['Figma', 'Prototyping', 'Design Systems'] },
   { icon: Server, tags: ['ERP', 'CRM', 'Dashboards', 'Automation'] },
-  { icon: TrendingUp, tags: ['Analytics', 'SEO', 'PPC', 'Content'] },
-  { icon: Lightbulb, tags: ['Strategy', 'Planning', 'Research'] },
-  { icon: Megaphone, tags: ['Google Ads', 'Meta Ads', 'TikTok Ads'] },
-  { icon: Share2, tags: ['Instagram', 'Facebook', 'LinkedIn', 'TikTok'] },
-  { icon: ShoppingBag, tags: ['Shopify', 'Stripe', 'WooCommerce'] },
-  { icon: Webhook, tags: ['REST', 'GraphQL', 'Webhooks', 'Microservices'] },
-  { icon: Cloud, tags: ['AWS', 'Azure', 'Docker', 'Kubernetes'] },
-  { icon: Wrench, tags: ['Monitoring', 'Updates', 'Bug Fixes', '24/7'] },
-  { icon: Search, tags: ['On-Page SEO', 'Core Web Vitals', 'Speed Optimization'] },
-  { icon: Bot, tags: ['Chatbots', 'ML', 'Process Automation', 'AI Agents'] },
+  { icon: Globe, tags: ['React', 'Next.js', 'TypeScript'] },
+  { icon: Code2, tags: ['Node.js', 'PostgreSQL', 'REST APIs'] },
 ]
 
 function ServiceCard({
