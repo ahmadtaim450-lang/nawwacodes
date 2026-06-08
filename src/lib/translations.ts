@@ -6,6 +6,7 @@ export const translations = {
       home: "Home",
       services: "Services",
       work: "Work",
+      founders: "Founders",
       contact: "Contact",
       about: "About",
     },
@@ -84,6 +85,11 @@ export const translations = {
       title: "WHERE WE ARE LOCATED",
       description: "Rooted in the Middle East, serving clients across the globe — from London to Tokyo. Our distributed team works with businesses worldwide, delivering digital solutions without borders.",
     },
+    founders: {
+      label: "Our Team",
+      title: "Meet the Founders",
+      description: "Hover over each portrait to reveal the robotic core beneath — a team that blends human creativity with technical precision.",
+    },
     servicesItems: [
       { title: "Custom Web Development", description: "Building modern, scalable, and high-performance websites tailored to business needs.", benefit: "A custom website builds trust, improves conversion, and sets you apart from competitors using generic templates." },
       { title: "Web Application Development", description: "Developing secure and powerful web applications with seamless user experiences.", benefit: "Web apps automate your workflows, reduce manual work, and let you scale operations without hiring more staff." },
@@ -107,6 +113,7 @@ export const translations = {
       home: "الرئيسية",
       services: "خدماتنا",
       work: "عُملائنا",
+      founders: "المؤسسون",
       contact: "اتصل بنا",
       about: "من نحن",
     },
@@ -184,6 +191,11 @@ export const translations = {
       badge: "انتشار عالمي",
       title: "أين نتواجد",
       description: "جذورنا في الشرق الأوسط، نخدم عملاء حول العالم — من لندن إلى طوكيو. فريقنا الموزع يعمل مع الشركات عالمياً، نقدم حلولاً رقمية بلا حدود.",
+    },
+    founders: {
+      label: "فريقنا",
+      title: "تعرف على المؤسسين",
+      description: "مرر المؤشر فوق كل صورة لتكشف الجوهر الآلي — فريق يمزج الإبداع البشري بالدقة التقنية.",
     },
     servicesItems: [
       { title: "تطوير الويب المخصص", description: "بناء مواقع إلكترونية حديثة، قابلة للتوسع، وعالية الأداء، مصممة خصيصًا لتلبية احتياجات الأعمال.", benefit: "الموقع المخصص يبني الثقة، يحسن التحويل، ويميزك عن المنافسين الذين يستخدمون قوالب جاهزة." },

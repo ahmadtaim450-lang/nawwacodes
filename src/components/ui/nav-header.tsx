@@ -13,6 +13,7 @@ function NavHeader() {
     { label: t.nav.home, href: "#hero" },
     { label: t.nav.about, href: "#about" },
     { label: t.nav.services, href: "#services" },
+    { label: t.nav.founders, href: "#founders" },
     { label: t.nav.work, href: "#testimonials" },
     { label: t.nav.contact, href: "#contact" },
   ]
