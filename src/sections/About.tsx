@@ -12,6 +12,7 @@ export function About() {
 
   useEffect(() => {
     const load = async () => {
+      if (window.innerWidth < 1024) return
       const { renderCanvas } = await import("@/components/ui/canvas")
       renderCanvas()
     }
