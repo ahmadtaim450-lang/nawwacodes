@@ -89,7 +89,7 @@ export function Testimonials() {
               {t.testimonials.title}
             </span>
           </h2>
-          <p className="text-center mt-4 text-neutral-500 text-lg">
+          <p className="text-center mt-4 text-orange-400/80 text-lg">
             {t.testimonials.description}
           </p>
         </motion.div>

@@ -18,8 +18,8 @@ const founders: FounderData[] = [
   {
     name: 'Abed Istampooli',
     role: 'CTO & Co-Founder',
-    humanSrc: '/founders_photo/abed-human.png',
-    robotSrc: '/founders_photo/abed-robot.png',
+    humanSrc: '/founders_photo/abed-human.jpg',
+    robotSrc: '/founders_photo/abed-robot.jpg',
   },
 ]
 

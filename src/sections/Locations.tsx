@@ -75,7 +75,7 @@ export function Locations() {
                 {t.locations.title}
               </span>
             </h2>
-            <p className="text-neutral-400 text-base md:text-lg leading-relaxed max-w-md">
+            <p className="text-orange-400/80 text-base md:text-lg leading-relaxed max-w-md">
               {t.locations.description}
             </p>
 
