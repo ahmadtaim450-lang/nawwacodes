@@ -101,11 +101,11 @@ export function Locations() {
                   <MapArcAsync
                     data={arcs}
                     curvature={0.35}
-                    paint={{ "line-color": "#3b82f6", "line-width": 1.5, "line-opacity": 0.5, "line-dasharray": [2, 2] }}
+                    paint={{ "line-color": "#f97316", "line-width": 1.5, "line-opacity": 0.5, "line-dasharray": [2, 2] }}
                   />
                   <MapMarkerAsync longitude={hub.lng} latitude={hub.lat}>
                     <MarkerContentAsync>
-                      <div className="size-3 rounded-full border-2 border-white bg-blue-500 shadow-md shadow-blue-500/50" />
+                      <div className="size-3 rounded-full border-2 border-white bg-orange-500 shadow-md shadow-orange-500/50" />
                       <MarkerLabelAsync position="top" className="bg-black/80 rounded-sm px-1.5 py-0.5 text-[11px] font-semibold backdrop-blur">
                         {hub.name}
                       </MarkerLabelAsync>

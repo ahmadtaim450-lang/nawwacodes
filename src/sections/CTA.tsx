@@ -79,7 +79,7 @@ export function CTA() {
 
   return (
     <section id="contact" ref={ref} className="relative py-32 bg-black overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(120,119,198,0.12),transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(249,115,22,0.12),transparent)]" />
       <FloatingPaths position={1} />
       <FloatingPaths position={-1} />
 

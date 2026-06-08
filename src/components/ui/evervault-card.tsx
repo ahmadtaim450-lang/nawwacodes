@@ -21,7 +21,7 @@ function CardPattern({ mouseX, mouseY, randomString, isActive }: any) {
     <div className="pointer-events-none">
       <div className="absolute inset-0 rounded-2xl [mask-image:linear-gradient(white,transparent)] opacity-15 group-hover/card:opacity-30" />
       <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-500 to-blue-700 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-orange-500 to-orange-700 backdrop-blur-xl transition duration-500"
         style={{ ...style, opacity: isActive ? 0.6 : 0.15 }}
       />
       <motion.div

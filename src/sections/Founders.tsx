@@ -12,8 +12,8 @@ const founders: FounderData[] = [
   {
     name: 'Ihab Abdoulal',
     role: 'CEO & Co-Founder',
-    humanSrc: '/founders_photo/human.png',
-    robotSrc: '/founders_photo/robot.webp',
+    humanSrc: '/founders_photo/ihab-human.jpg',
+    robotSrc: '/founders_photo/ihab-robot.jpg',
   },
   {
     name: 'Abed Istampooli',

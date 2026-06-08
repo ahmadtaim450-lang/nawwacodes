@@ -256,7 +256,7 @@ function MapArc({ data, curvature = 0.3, paint }: MapArcProps) {
       type: "line",
       source: sourceId,
       layout: { "line-join": "round", "line-cap": "round" },
-      paint: { "line-color": "#3b82f6", "line-width": 1.5, "line-opacity": 0.6, ...paint },
+      paint: { "line-color": "#f97316", "line-width": 1.5, "line-opacity": 0.6, ...paint },
     });
     return () => {
       try { map.getLayer(layerId) && map.removeLayer(layerId); map.getSource(sourceId) && map.removeSource(sourceId); } catch {}

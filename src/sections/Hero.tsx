@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 import { SplineScene } from '@/components/ui/splite'
@@ -8,6 +8,7 @@ import { useI18n } from '@/lib/i18n'
 export function Hero() {
   const { t } = useI18n()
   const ref = useRef<HTMLElement>(null)
+  const [glitchActive, setGlitchActive] = useState(true)
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -15,12 +16,34 @@ export function Hero() {
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '40%'])
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
+  useEffect(() => {
+    const timer = setTimeout(() => setGlitchActive(false), 1600)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <section
       id="hero"
       ref={ref}
       className="relative min-h-screen flex items-center overflow-hidden bg-black"
     >
+      {/* Orange intro glow */}
+      {glitchActive && (
+        <>
+          <motion.div
+            className="absolute inset-0 z-50 pointer-events-none"
+            animate={{ opacity: [0, 0.4, 0.6, 0.3, 0.5, 0] }}
+            transition={{ duration: 1.6, ease: 'easeInOut', times: [0, 0.15, 0.3, 0.5, 0.7, 1] }}
+          >
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_50%,rgba(249,115,22,0.25),transparent)]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-orange-500/20 via-transparent to-orange-600/10" />
+          </motion.div>
+          <div className="absolute inset-0 z-50 pointer-events-none animate-glitch-1 bg-gradient-to-r from-orange-500/60 to-orange-400/40 mix-blend-screen opacity-30" />
+          <div className="absolute inset-0 z-50 pointer-events-none animate-glitch-2 bg-gradient-to-b from-orange-400/50 to-orange-600/30 mix-blend-screen opacity-25" />
+          <div className="absolute inset-0 z-50 bg-orange-500/10 animate-glitch-flicker pointer-events-none" />
+        </>
+      )}
+
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))]" />
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
 

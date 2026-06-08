@@ -37,6 +37,7 @@ export function About() {
         id="canvas"
         className="pointer-events-none absolute inset-0 z-0 opacity-70"
       />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_40%_30%_at_50%_80%,rgba(249,115,22,0.06),transparent)] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-16">
@@ -48,7 +49,7 @@ export function About() {
             className="lg:col-span-3 space-y-6 md:space-y-8"
           >
             <div>
-              <p className="text-sm font-mono tracking-[0.3em] text-neutral-500 uppercase mb-4">
+              <p className="text-sm font-mono tracking-[0.3em] text-orange-500/70 uppercase mb-4">
                 {t.about.title}
               </p>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
@@ -78,9 +79,9 @@ export function About() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="p-4 sm:p-6 rounded-2xl border border-white/[0.06] bg-white/[0.02] flex flex-col justify-center"
+                className="p-4 sm:p-6 rounded-2xl border border-orange-500/10 bg-orange-500/[0.02] flex flex-col justify-center hover:border-orange-500/30 transition-colors"
               >
-                <stat.icon className="w-6 h-6 text-neutral-400 mb-3" />
+                <stat.icon className="w-6 h-6 text-orange-400 mb-3" />
                 <div className="text-3xl sm:text-4xl font-bold text-white">{stat.value}</div>
                 <div className="text-xs sm:text-sm text-neutral-500 mt-1.5">{stat.label}</div>
               </div>

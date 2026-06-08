@@ -153,9 +153,9 @@ export function renderCanvas() {
 
   oscillator = new Oscillator({
     phase: Math.random() * 2 * Math.PI,
-    amplitude: 85,
+    amplitude: 30,
     frequency: 0.0015,
-    offset: 285,
+    offset: 25,
   })
 
   document.addEventListener("mousemove", onMouseMove)
