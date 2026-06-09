@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nawwacodes.com/sitemap.xml
