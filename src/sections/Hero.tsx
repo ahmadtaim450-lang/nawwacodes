@@ -119,7 +119,7 @@ export function Hero() {
                 </div>
                 <div className="w-px h-4 bg-neutral-700" />
                 <div>
-                  <span className="text-white font-semibold">30+</span> {t.stats.clients}
+                  <span className="text-white font-semibold">70+</span> {t.stats.clients}
                 </div>
                 <div className="w-px h-4 bg-neutral-700" />
                 <div>

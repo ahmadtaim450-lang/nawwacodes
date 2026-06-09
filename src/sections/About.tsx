@@ -21,7 +21,7 @@ export function About() {
 
   const stats = [
     { icon: Code2, value: "50+", label: t.about.stat1 },
-    { icon: Users, value: "30+", label: t.about.stat2 },
+    { icon: Users, value: "70+", label: t.about.stat2 },
     { icon: Zap, value: "4+", label: t.about.stat3 },
     { icon: Target, value: "100%", label: t.about.stat4 },
   ]

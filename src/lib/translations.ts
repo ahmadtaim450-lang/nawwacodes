@@ -45,7 +45,7 @@ export const translations = {
     },
     stats: {
       projects: "Projects Delivered",
-      clients: "Happy Clients",
+      clients: "More than 70 Clients",
       years: "Years Experience",
       retention: "Client Retention",
     },
@@ -143,7 +143,7 @@ export const translations = {
     },
     stats: {
       projects: "مشروع منجز",
-      clients: "عميل سعيد",
+      clients: "أكثر من 70 عميل",
       years: "سنوات خبرة",
       retention: "احتفاظ بالعملاء",
     },
