@@ -115,7 +115,7 @@ export function Hero() {
                 className="flex items-center gap-4 sm:gap-8 pt-4 text-xs sm:text-sm text-neutral-500 flex-wrap"
               >
                 <div>
-                  <span className="text-white font-semibold">50+</span> {t.stats.projects}
+                  <span className="text-white font-semibold">100+</span> {t.stats.projects}
                 </div>
                 <div className="w-px h-4 bg-neutral-700" />
                 <div>
