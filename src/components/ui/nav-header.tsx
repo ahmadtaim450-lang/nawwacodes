@@ -20,7 +20,10 @@ function NavHeader() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6">
-      <nav>
+      <nav className="flex items-center gap-3">
+        <a href="#hero" className="flex items-center gap-2 shrink-0">
+          <img src="/favicon.png" alt="Nawwacodes" className="w-8 h-8 rounded-lg brightness-0 invert" />
+        </a>
         <ul
           className="relative mx-auto flex w-fit items-center gap-1 rounded-full border border-white/[0.08] bg-black/60 backdrop-blur-xl p-1"
           onMouseLeave={() => setPosition((pv) => ({ ...pv, opacity: 0 }))}

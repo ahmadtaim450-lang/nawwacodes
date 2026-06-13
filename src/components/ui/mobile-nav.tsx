@@ -26,14 +26,19 @@ export default function MobileNav() {
 
   return (
     <>
-      {/* Hamburger button */}
-      <button
-        onClick={() => setOpen(true)}
-        className="fixed top-4 right-4 z-50 w-11 h-11 rounded-full border border-white/[0.08] bg-black/60 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white/10 transition-all lg:hidden"
-        aria-label="Open menu"
-      >
-        <Menu className="w-5 h-5" />
-      </button>
+      {/* Logo + Hamburger */}
+      <div className="fixed top-4 left-4 right-4 z-50 flex items-center justify-between lg:hidden">
+        <a href="#hero" className="flex items-center gap-2">
+          <img src="/favicon.png" alt="Nawwacodes" className="w-8 h-8 rounded-lg brightness-0 invert" />
+        </a>
+        <button
+          onClick={() => setOpen(true)}
+          className="w-11 h-11 rounded-full border border-white/[0.08] bg-black/60 backdrop-blur-xl flex items-center justify-center text-white hover:bg-white/10 transition-all"
+          aria-label="Open menu"
+        >
+          <Menu className="w-5 h-5" />
+        </button>
+      </div>
 
       {/* Overlay */}
       <AnimatePresence>
