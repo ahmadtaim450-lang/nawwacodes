@@ -11,9 +11,9 @@ const I18nContext = createContext<I18nContextType | null>(null)
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>(() => {
+    if (window.location.pathname.startsWith("/ar")) return "ar"
     const saved = localStorage.getItem("lang") as Lang | null
     if (saved === "ar" || saved === "en") return saved
-    if (window.location.pathname.startsWith("/ar")) return "ar"
     return "en"
   })
 
