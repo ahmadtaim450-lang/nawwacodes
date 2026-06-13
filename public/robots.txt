@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /founders_photo/
-Sitemap: https://nawwacodes.com/sitemap.xml
+Sitemap: https://nawwacodes.online/sitemap.xml
