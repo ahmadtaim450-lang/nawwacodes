@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
 import { ArrowRight, MessageCircle } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 
@@ -16,20 +16,18 @@ function CyclingWord({ words }: { words: string[] }) {
 
   return (
     <span className="relative inline-flex overflow-hidden align-bottom h-[1.1em] text-2xl sm:text-3xl md:text-5xl lg:text-6xl">
-      {words.map((word, i) => (
-        <span
-          key={word}
-          className="font-bold whitespace-nowrap text-white transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]"
-          style={{
-            position: i === index ? 'relative' : 'absolute',
-            left: i === index ? 'auto' : 0,
-            transform: `translateY(${i === index ? 0 : i < index ? '-120%' : '120%'})`,
-            opacity: i === index ? 1 : 0,
-          }}
+      <AnimatePresence mode="popLayout" initial={false}>
+        <motion.span
+          key={words[index]}
+          initial={{ y: '120%', opacity: 0 }}
+          animate={{ y: '0%', opacity: 1 }}
+          exit={{ y: '-120%', opacity: 0 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="font-bold whitespace-nowrap text-white"
         >
-          {word}
-        </span>
-      ))}
+          {words[index]}
+        </motion.span>
+      </AnimatePresence>
     </span>
   )
 }
