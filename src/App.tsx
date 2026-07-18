@@ -8,7 +8,6 @@ import { Locations } from './sections/Locations'
 import { Stats } from './sections/Stats'
 import { CTA } from './sections/CTA'
 import { Footer } from './sections/Footer'
-import { Founders } from './sections/Founders'
 
 function App() {
   return (
@@ -20,7 +19,6 @@ function App() {
       <Hero />
       <About />
       <Services />
-      <Founders />
       <Testimonials />
       <Locations />
       <Stats />

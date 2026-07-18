@@ -6,7 +6,6 @@ export const translations = {
       home: "Home",
       services: "Services",
       work: "Work",
-      founders: "Founders",
       contact: "Contact",
       about: "About",
     },
@@ -53,6 +52,7 @@ export const translations = {
       badge: "Let's talk",
       ready: "Ready to build",
       something: "something",
+      words: ["powerful", "innovative", "beautiful", "smart", "creative"],
       description:
         "Whether you need a mobile app, a web platform, or a complete management system — we turn your vision into reality.",
       whatsapp: "WhatsApp us",
@@ -85,11 +85,6 @@ export const translations = {
       title: "WHERE WE ARE LOCATED",
       description: "Rooted in the Middle East, serving clients across the globe — from London to Tokyo. Our distributed team works with businesses worldwide, delivering digital solutions without borders.",
     },
-    founders: {
-      label: "Our Team",
-      title: "Meet the Founders",
-      description: "Hover over each portrait to reveal the robotic core beneath — a team that blends human creativity with technical precision.",
-    },
     servicesItems: [
       { title: "AI & Automation Solutions", description: "Implementing intelligent automation and AI-powered solutions to improve efficiency.", benefit: "AI isn't the future — it's now. Automate repetitive tasks, analyze data faster, and let machines handle the heavy lifting." },
       { title: "SEO & Performance Optimization", description: "Enhancing website visibility, speed, and search engine rankings.", benefit: "75% of users never scroll past page one. We push your site to the top with technical SEO and speed optimizations." },
@@ -104,7 +99,6 @@ export const translations = {
       home: "الرئيسية",
       services: "خدماتنا",
       work: "عُملائنا",
-      founders: "المؤسسون",
       contact: "اتصل بنا",
       about: "من نحن",
     },
@@ -151,6 +145,7 @@ export const translations = {
       badge: "لنتحدث",
       ready: "مستعد للبناء",
       something: "شيء",
+      words: ["قوي", "مبتكر", "جميل", "ذكي", "إبداعي"],
       description:
         "سواء كنت بحاجة إلى تطبيق جوال أو منصة ويب أو نظام إدارة متكامل — نحن نحول رؤيتك إلى واقع.",
       whatsapp: "واتساب",
@@ -182,11 +177,6 @@ export const translations = {
       badge: "انتشار عالمي",
       title: "أين نتواجد",
       description: "جذورنا في الشرق الأوسط، نخدم عملاء حول العالم — من لندن إلى طوكيو. فريقنا الموزع يعمل مع الشركات عالمياً، نقدم حلولاً رقمية بلا حدود.",
-    },
-    founders: {
-      label: "فريقنا",
-      title: "تعرف على المؤسسين",
-      description: "مرر المؤشر فوق كل صورة لتكشف الجوهر الآلي — فريق يمزج الإبداع البشري بالدقة التقنية.",
     },
     servicesItems: [
       { title: "حلول الذكاء الاصطناعي والأتمتة", description: "تطبيق حلول ذكية تعتمد على الذكاء الاصطناعي والأتمتة لرفع الكفاءة وتحسين الإنتاجية.", benefit: "الذكاء الاصطناعي ليس المستقبل — إنه الحاضر. أتمتة المهام المتكررة، تحليل أسرع للبيانات، ودع الآلات تتولى العمل الثقيل." },

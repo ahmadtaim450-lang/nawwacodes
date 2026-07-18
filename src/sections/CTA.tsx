@@ -3,17 +3,16 @@ import { motion, useInView } from 'framer-motion'
 import { ArrowRight, MessageCircle } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 
-const words = ['powerful', 'innovative', 'beautiful', 'smart', 'creative']
-
-function CyclingWord() {
+function CyclingWord({ words }: { words: string[] }) {
   const [index, setIndex] = useState(0)
 
   useEffect(() => {
+    setIndex(0)
     const id = setInterval(() => {
       setIndex((prev) => (prev === words.length - 1 ? 0 : prev + 1))
     }, 4000)
     return () => clearInterval(id)
-  }, [])
+  }, [words])
 
   return (
     <span className="relative inline-flex overflow-hidden align-bottom h-[1.1em] text-2xl sm:text-3xl md:text-5xl lg:text-6xl">
@@ -102,7 +101,7 @@ export function CTA() {
             <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
               {t.cta.something}&nbsp;
-              <CyclingWord />
+              <CyclingWord words={t.cta.words} />
               &nbsp;?
             </span>
           </h2>
