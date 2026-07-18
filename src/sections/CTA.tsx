@@ -1,36 +1,7 @@
-import { useRef, useEffect, useState } from 'react'
-import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { ArrowRight, MessageCircle } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
-
-function CyclingWord({ words }: { words: string[] }) {
-  const [index, setIndex] = useState(0)
-
-  useEffect(() => {
-    setIndex(0)
-    const id = setInterval(() => {
-      setIndex((prev) => (prev === words.length - 1 ? 0 : prev + 1))
-    }, 4000)
-    return () => clearInterval(id)
-  }, [words])
-
-  return (
-    <span className="relative inline-flex overflow-hidden align-bottom h-[1.1em] text-2xl sm:text-3xl md:text-5xl lg:text-6xl">
-      <AnimatePresence mode="popLayout" initial={false}>
-        <motion.span
-          key={words[index]}
-          initial={{ y: '120%', opacity: 0 }}
-          animate={{ y: '0%', opacity: 1 }}
-          exit={{ y: '-120%', opacity: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="font-bold whitespace-nowrap text-white"
-        >
-          {words[index]}
-        </motion.span>
-      </AnimatePresence>
-    </span>
-  )
-}
 
 function FloatingPaths({ position }: { position: number }) {
   const paths = Array.from({ length: 24 }, (_, i) => ({
@@ -98,9 +69,7 @@ export function CTA() {
             </span>
             <br />
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-400">
-              {t.cta.something}&nbsp;
-              <CyclingWord words={t.cta.words} />
-              &nbsp;?
+              {t.cta.something} {t.cta.word}?
             </span>
           </h2>
 

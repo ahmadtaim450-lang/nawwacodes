@@ -52,7 +52,7 @@ export const translations = {
       badge: "Let's talk",
       ready: "Ready to build",
       something: "something",
-      words: ["powerful", "innovative", "beautiful", "smart", "creative"],
+      word: "creative",
       description:
         "Whether you need a mobile app, a web platform, or a complete management system — we turn your vision into reality.",
       whatsapp: "WhatsApp us",
@@ -145,7 +145,7 @@ export const translations = {
       badge: "لنتحدث",
       ready: "مستعد للبناء",
       something: "شيء",
-      words: ["قوي", "مبتكر", "جميل", "ذكي", "إبداعي"],
+      word: "إبداعي",
       description:
         "سواء كنت بحاجة إلى تطبيق جوال أو منصة ويب أو نظام إدارة متكامل — نحن نحول رؤيتك إلى واقع.",
       whatsapp: "واتساب",
